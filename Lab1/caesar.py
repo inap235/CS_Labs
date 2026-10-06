@@ -1,7 +1,6 @@
-"""Caesar cipher (one key and two keys) over the Romanian alphabet, n = 31.
-
-Letters are encoded only through the ALPHABET table below (Table 2 of the lab):
-A=0, Ă=1, Â=2, ..., Z=30. ASCII / Unicode code points are never used for the shift.
+"""Caesar cipher over the Romanian alphabet, n = 31.
+Letters are encoded only through the ALPHABET table below:
+A=0, Ă=1, Â=2, ..., Z=30
 """
 
 import unicodedata

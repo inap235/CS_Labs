@@ -1,4 +1,4 @@
-#Streamlit interface
+#Streamlit interface    .\.venv\Scripts\Activate.ps1
 
 import pandas as pd
 import streamlit as st
