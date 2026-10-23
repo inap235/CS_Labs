@@ -7,7 +7,7 @@ is written as I. The remaining 30 letters fill a matrix with 5 rows and 6 column
 import unicodedata
 from dataclasses import dataclass
 
-# Letter order of the Romanian alphabet (the same table as in Laboratory Work No. 1)
+# Letter order of the Romanian alphabet
 ALPHABET = [
     "A", "Ă", "Â", "B", "C", "D", "E", "F", "G", "H", "I",
     "Î", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S",
@@ -31,14 +31,14 @@ ALLOWED_TEXT_MSG = (
 
 
 def normalize(text: str) -> str:
-    """Compose diacritics, map cedilla variants to comma-below, convert to uppercase."""
+    """Compose diacritics, map cedilla variants to comma-below, convert to uppercase"""
     text = unicodedata.normalize("NFC", text)
     text = "".join(CEDILLA_TO_COMMA.get(ch, ch) for ch in text)
     return text.upper()
 
 
 def letters_only(raw: str, what: str) -> str:
-    """Uppercase the text, remove spaces and check that every character is a letter."""
+    """Uppercase the text, remove spaces and check that every character is a letter"""
     text = "".join(normalize(raw).split())
     for pos, ch in enumerate(text, start=1):
         if ch not in ALPHABET:
